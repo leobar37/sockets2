@@ -33,7 +33,6 @@ export class UsuarioService {
       let url = environment.wsUrl + '/register';
       return this.http.post(url , { nombre, password })
       .pipe(map(async (data : any)  =>{ 
-       console.log(data);
         let us =  data.rpta;
         if(data.rpta != false){
           this.usuario = us;

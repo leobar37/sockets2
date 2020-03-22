@@ -4,14 +4,14 @@ import { IUsuario } from '../classes/usuario';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { UsuarioService } from './usuario.service';
-import { Subject } from 'rxjs';
+// import { Subject } from 'rxjs';
 // import { Imensaje } from '../classes/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  public tipoChatObse   = new   Subject<any>();
+  // public tipoChatObse   = new   Subject<any>();
   constructor(
     private _socket : WebsocketService,
     private _http :HttpClient,
@@ -19,7 +19,7 @@ export class ChatService {
   ) {
      
   }
-   sendMessage(mensaje: Imensaje1 , callback ?: Function){
+   sendMessage(mensaje: Imensaje , callback ?: Function){
       this._socket.emit('mensaje' ,mensaje  , callback); 
     }
    getMesages(){
@@ -42,7 +42,7 @@ export class ChatService {
      return this._http.post(url , mensaje);
   }
 }
-export interface Imensaje1 {
+export interface Imensaje {
   de: string,
   mensaje:string
 }

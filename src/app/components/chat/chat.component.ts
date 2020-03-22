@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService, Imensaje1 } from '../../services/chat.service';
+import { ChatService, Imensaje } from '../../services/chat.service';
 import { UsuarioService } from '../../services/usuario.service';
 import { IUsuario } from '../../classes/usuario';
 
@@ -11,7 +11,7 @@ import { IUsuario } from '../../classes/usuario';
 export class ChatComponent implements OnInit {
  mensaje : string;
  destino : IUsuario; 
- mensajes : Imensaje1[] = [];
+ mensajes : Imensaje[] = [];
   constructor(
    private  _chat:ChatService,
    private _us :UsuarioService
@@ -26,7 +26,7 @@ export class ChatComponent implements OnInit {
     enviarMensaje(){
      if(!this.destino){
       if(this.mensaje.trim() == "") return;
-      let menEnviar:Imensaje1 = {
+      let menEnviar:Imensaje = {
         de  : this._us.usuario.nombre,
         mensaje :this.mensaje
       } 
@@ -37,14 +37,14 @@ export class ChatComponent implements OnInit {
     }
 
     observadores(){
-      this._chat.getMesages().subscribe( (msj : Imensaje1 ) =>{
+      this._chat.getMesages().subscribe( (msj : Imensaje ) =>{
         this.mensajes.push(msj); 
      });
-     this._chat.tipoChatObse.asObservable().subscribe( data =>{
-      console.log(this.destino);
+    //  this._chat.tipoChatObse.asObservable().subscribe( data =>{
+    //   console.log(this.destino);
        
-      if(data)   
-      this.destino = data;
-     })
+    //   if(data)   
+    //   this.destino = data;
+    //  })
     }
 }
