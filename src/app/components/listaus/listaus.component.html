@@ -1,0 +1,15 @@
+<h3 class="text-white text-center pt-2">lista de usuarios</h3>
+<div class="" style="height:  60vh; padding-top: 1.5rem; padding-right: 1rem; overflow-y: scroll;">
+    <ul class="list-group list-group-flush" >
+      <a 
+       *ngFor="let us of usuarios"
+       (click)="enviarPrivado(us.idBD)"
+        class="list-group-item cont">
+        <a >{{us.nombre}}</a>
+        <span *ngIf="us.id" class="badge badge-primary text-right">activo</span>
+ 
+      </a> 
+      
+    <!-- <span class="badge badge-succes">activo</span> -->
+</ul> 
+</div>

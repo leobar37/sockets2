@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row pt-5" style="height: 50vh;">
+        <div class="col-md-6 offset-md-2" style="background: skyblue;">
+             <h2 class="text-center pt-2 h3">Loguin</h2>
+            <form class="pt-2">
+                <div class="form-group">
+                    <label for="nombre">nombre de usuario</label>
+                    <input 
+                    [(ngModel)]="nombre"
+                    name="nombre"
+                    type="text" class="form-control" id="nombre" placeholder="usuario">
+                 </div>
+                <div class="form-group">
+                    <label for="password">contraseña</label>
+                    <input 
+                    [(ngModel)]="password"
+                    name="password"
+                    type="password" class="form-control" id="password" placeholder="contraseña">
+                 </div>
+                 <button
+                 (click)="ingresar()"
+                 class="btn btn-primary" style="margin-left: 40%;">
+                       ingresar
+                 </button>
+           </form>
+          </div>
+      </div>
+</div>

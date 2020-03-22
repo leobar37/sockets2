@@ -1,0 +1,7 @@
+<div class="row text-center" style="background: black;  color:  white;">
+    <div class="col-md-12 pb-2">
+          <h1> {{nombre}} </h1>
+          <span *ngIf="_socket.conectado" class="pb-2">conectado</span>
+          <span *ngIf="!_socket.conectado" class="pb-2">desconectado</span>
+      </div>
+ </div>

@@ -1,0 +1,41 @@
+<div class="container text-white text-center">
+    <div class="row">
+        <div class="col-md-12">
+             <h3 *ngIf="!destino" class="pb-2 text-center"> 
+               chat general
+              </h3>
+             <h3 *ngIf="destino" class="pb-2 text-center"> 
+               en un chat con {{ destino.nombre}}
+              </h3>
+
+             <div class="col-md-12">
+               <div class="form-control" style="width: 100%;  height: 50vh;  overflow-y: scroll;" >
+                <ul class="list-group">
+                  <li
+                   *ngFor="let msj of mensajes"
+                   class="list-group-item disabled text-left" aria-disabled="true">
+                   {{msj.de}} : {{msj.mensaje}}
+                  </li>
+            
+                </ul>
+                </div>
+                <form action="" class="row pt-2">
+                    <div class="col-md-9">
+                      <div class="form-group">
+                          <input 
+                           [(ngModel)]="mensaje"
+                            name="mensaje" 
+                          class="form-control" type="text">
+                     </div>
+                    </div>
+                  <div class="col-md-3">
+                      <button  (click)=" enviarMensaje()" class="btn btn-light btn-block"> 
+                          enviar
+                        </button>
+                  </div>
+                  </form>
+             </div>
+        </div>
+    </div>
+  
+</div>
