@@ -13,16 +13,7 @@ export class MensajesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-     this._chat.mensajePrivado().subscribe(data =>{
-      console.log('notificacion');
-      
-      if(data){
-         this._chat.reclamarMensajes().subscribe(data =>{
-             console.log(data);
-         })
-       }
-         
-     })  
+    
   } 
  
 }

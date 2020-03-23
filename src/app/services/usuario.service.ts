@@ -6,7 +6,6 @@ import { Usuario, IUsuario } from '../classes/usuario';
 import { ChatService } from './chat.service';
 import { WebsocketService } from './websocket.service';
 import { map } from 'rxjs/operators';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +26,6 @@ export class UsuarioService {
       }else{
         return false;
       }
-
      }
     crearUsuario(nombre: string , password ?:string){
       let url = environment.wsUrl + '/register';

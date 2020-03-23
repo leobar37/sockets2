@@ -10,11 +10,12 @@
 
              <div class="col-md-12">
                <div class="form-control" style="width: 100%;  height: 50vh;  overflow-y: scroll;" >
-                <ul class="list-group">
+                <ul  class="list-group">
                   <li
-                   *ngFor="let msj of mensajes"
+                   *ngFor="let msj of chatPri.mensajes"
                    class="list-group-item disabled text-left" aria-disabled="true">
-                   {{msj.de}} : {{msj.mensaje}}
+                   <!-- {{msj.de}} : -->
+                    {{msj.mensaje}}
                   </li>
             
                 </ul>

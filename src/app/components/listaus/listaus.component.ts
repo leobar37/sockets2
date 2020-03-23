@@ -29,9 +29,7 @@ export class ListausComponent implements OnInit {
   }
   enviarPrivado(idbd:string){
 
-    let usuario = this.usuarios.find( usuario =>  usuario.idBD ==  idbd);
-
-    
-    // this._chat.tipoChatObse.next(usuario);
+    let usuario = this.usuarios.find( usuario =>  usuario.idBD ==  idbd);   
+    this._chat.tipoChatObse.next(usuario);
   }
 }
