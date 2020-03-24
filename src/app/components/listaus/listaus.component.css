@@ -2,3 +2,11 @@
     display: flex;
     justify-content: space-between;
 }
+.contenedor{
+  border-left: 2px solid skyblue; 
+}
+a{cursor: pointer;  
+}
+::-webkit-scrollbar {
+    display: none;
+}

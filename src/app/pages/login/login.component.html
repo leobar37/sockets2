@@ -19,9 +19,16 @@
                  </div>
                  <button
                  (click)="ingresar()"
-                 class="btn btn-primary" style="margin-left: 40%;">
+                 class="btn btn-primary" style="margin-left: 20%;">
                        ingresar
                  </button>
+                 <strong class="abajo">
+                    <a 
+                    [routerLink]="['/register']"  
+                   class="text-white" style="margin-left: 25%;" >
+                      no tengo una cuenta
+                   </a>
+                   </strong>
            </form>
           </div>
       </div>

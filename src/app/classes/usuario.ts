@@ -10,8 +10,8 @@ export class Usuario{
 
 export interface IUsuario {
  id?:string,
- idBD :string,
- sala :string
+ idBD ?:string,
+ sala ?:string
   nombre? :string,
    password ?:string
 }

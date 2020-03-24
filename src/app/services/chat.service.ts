@@ -19,7 +19,7 @@ export class ChatService {
   ) {
      
   }
-   sendMessage(mensaje: Imensaje , callback ?: Function){
+   sendMessage(mensaje: ImensajeBa , callback ?: Function){
       this._socket.emit('mensaje' ,mensaje  , callback); 
     }
    getMesages(){
@@ -31,7 +31,7 @@ export class ChatService {
    mensajePrivado(){
     return this._socket.listen('mensaje-privado');
    }
-   
+
   /*=====  peticiones htttp  ======*/
   reclamarMensajes(idConversacion :string){
     let url  = environment.wsUrl  + '/mensaje/'+ idConversacion;
@@ -40,6 +40,16 @@ export class ChatService {
   enviarMensje(idbd:string ,mensaje:ImensajeBa){
     let url  = environment.wsUrl  + '/mensaje/'+ idbd;
      return this._http.post(url , mensaje);
+  }
+  //reclamar conversacion por id
+  reclamarConverxid(idDestino :string , idRemite :string){
+   let url = environment.wsUrl + '/conversacion';
+  return this._http.post(url,{ idDestino, idRemite});
+  }
+  //reclamar mensajes generales
+  mensajesGenerale(){
+     let url  = environment.wsUrl +'/general';
+    return this._http.get(url);
   }
 }
 export interface Imensaje {

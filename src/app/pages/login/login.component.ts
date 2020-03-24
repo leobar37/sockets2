@@ -14,9 +14,11 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private  _socket :WebsocketService ,
-    private _us :UsuarioService
+    private _us :UsuarioService,
     ) {
-     
+    if(_us.usuario){
+      router.navigate(['/chat']);
+    }
   } 
 
   ngOnInit() {

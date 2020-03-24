@@ -11,7 +11,7 @@ import { UsuarioService } from '../../services/usuario.service';
 export class HeaderComponent implements OnInit {
   nombre :string ="";
   constructor(
-    private _socket: WebsocketService,
+    public _socket: WebsocketService,
     private _chat : ChatService,
     private _us :UsuarioService
   ) { }
